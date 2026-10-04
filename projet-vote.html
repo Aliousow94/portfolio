@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vote électronique — Java | Mamadou Aliou SOW</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"></a>
+    <button class="burger" id="burger">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <span class="badge badge-dev">Java · Application desktop</span>
+  <h1>Plateforme de vote électronique</h1>
+  <p>Application souveraine et sécurisée pour les scrutins internes de l'UAM (délégués, chefs de département, directeurs d'UFR)</p>
+  <div class="tags" style="justify-content:center; margin-top:1.5rem;">
+    <span class="tag">Java 17</span><span class="tag">JavaFX</span><span class="tag">FXML</span>
+    <span class="tag">MySQL</span><span class="tag">JDBC</span><span class="tag">Maven</span><span class="tag">MVC</span>
+  </div>
+  <p class="context-note" style="margin-top:1.5rem;">Projet final — UE Java Avancé, L3 Informatique (UAM)<br>
+  Encadrants : Pr Amadou Dahirou GUEYE · Dr Lamine YADE</p>
+</header>
+
+<section>
+  <div class="section-inner">
+
+    <h2 class="section-title">Fonctionnalités clés</h2>
+    <ul class="checklist">
+      <li><strong>Architecture robuste</strong> : pattern MVC découplant logique métier et affichage</li>
+      <li><strong>Sécurité & anti-fraude</strong> : hachage des mots de passe (SHA-256), authentification par rôles, contraintes d'unicité SQL empêchant le double vote</li>
+      <li><strong>Ciblage dynamique</strong> : filtrage automatique des scrutins selon le profil de l'électeur (UFR, Département, Classe)</li>
+      <li><strong>Tableau de bord admin</strong> : statistiques en temps réel avec visualisations JavaFX (BarChart, PieChart)</li>
+      <li><strong>Bonus</strong> : importation d'électeurs en masse (CSV) et génération de cartes d'électeurs / rapports de dépouillement PDF (iText)</li>
+    </ul>
+
+    <h3 class="sub">🎓 Ce que ce projet m'a apporté</h3>
+    <ul class="checklist">
+      <li>Conception d'une architecture logicielle complète (MVC, couches)</li>
+      <li>Gestion de la persistance avec MySQL/JDBC</li>
+      <li>Bonnes pratiques de sécurité applicative (hachage, rôles, contraintes SQL)</li>
+      <li>Développement d'une interface riche avec JavaFX/Scene Builder</li>
+    </ul>
+
+    <a href="https://github.com/Aliousow94/java-evote-platform" class="btn btn-primary" target="_blank">💻 Voir le code sur GitHub</a>
+
+    <div class="prev-next">
+      <a href="projet-reussite.html"><span>← Précédent</span>Réussite scolaire — Data Science</a>
+      <a href="projet-cloud.html"><span>Suivant →</span>Infrastructure & conteneurisation</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>© 2026 Mamadou Aliou SOW — Portfolio Data Science & Machine Learning</footer>
+<script src="script.js"></script>
+</body>
+</html>

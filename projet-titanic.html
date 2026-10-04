@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titanic — Machine Learning | Mamadou Aliou SOW</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"></a>
+    <button class="burger" id="burger">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <span class="badge badge-ml">Machine Learning · Classification</span>
+  <h1>Analyse prédictive — Titanic</h1>
+  <p>Prédire la survie des passagers du Titanic : un workflow complet de Data Science, de l'exploration au modèle optimisé</p>
+  <div class="tags" style="justify-content:center; margin-top:1.5rem;">
+    <span class="tag">Python 3.12</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
+    <span class="tag">Scikit-learn</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
+    <span class="tag">Jupyter</span>
+  </div>
+  <p class="context-note" style="margin-top:1.5rem;">Projet académique — Licence 3 Informatique, UAM</p>
+</header>
+
+<section>
+  <div class="section-inner">
+
+    <h2 class="section-title">Contexte & objectif</h2>
+    <div class="about-text">
+      <p>
+        Développer un modèle capable de prédire si un passager du Titanic a survécu
+        (<strong>classification binaire</strong>) à partir de ses caractéristiques
+        (classe, âge, sexe, tarif, port d'embarquement...).
+        Le projet met en pratique <strong>l'intégralité du cycle de vie d'un projet Data Science</strong> :
+        exploration, prétraitement, entraînement, comparaison, optimisation et sauvegarde du modèle.
+      </p>
+      <p>
+        Le projet est organisé en 3 notebooks structurés :
+        <strong>01_EDA</strong> (analyse exploratoire), <strong>02_Preprocessing</strong>
+        (prétraitement) et <strong>03_Modelisation</strong> (modélisation et évaluation),
+        avec du code modulaire dans <strong>src/</strong> et le modèle final sauvegardé dans
+        <strong>models/</strong>.
+      </p>
+    </div>
+
+    <h3 class="sub">🔎 Étape 1 — Analyse exploratoire (EDA)</h3>
+    <ul class="checklist">
+      <li>Examen de la structure du dataset et des distributions des variables</li>
+      <li>Identification des valeurs manquantes</li>
+      <li>Étude des relations entre les variables et la survie</li>
+      <li>Détection des valeurs atypiques</li>
+    </ul>
+
+    <h3 class="sub">🧹 Étape 2 — Prétraitement</h3>
+    <ul class="checklist">
+      <li>Suppression des variables redondantes ou <strong>présentant un risque de fuite de données</strong></li>
+      <li>Traitement des valeurs manquantes</li>
+      <li>Détection et traitement des outliers (méthode IQR)</li>
+      <li>Encodage One-Hot des variables catégorielles</li>
+      <li>Standardisation des variables numériques (StandardScaler)</li>
+      <li>Séparation des données en ensembles d'entraînement et de test</li>
+    </ul>
+
+    <h3 class="sub">🤖 Étape 3 — Modélisation & optimisation</h3>
+    <p class="about-text">
+      <strong>5 modèles de classification testés et comparés</strong> — puis optimisation du
+      meilleur via <strong>GridSearchCV</strong> avec validation croisée à 5 plis :
+    </p>
+    <table>
+      <tr><th>Modèle</th><th>Accuracy</th><th>F1-score (classe 1)</th></tr>
+      <tr><td><strong style="color:var(--success)">Régression Logistique ★</strong></td><td><strong style="color:var(--success)">0,84</strong></td><td><strong style="color:var(--success)">0,78</strong></td></tr>
+      <tr><td>KNN</td><td>0,83</td><td>0,77</td></tr>
+      <tr><td>SVM</td><td>0,83</td><td>0,75</td></tr>
+      <tr><td>Arbre de Décision</td><td>0,82</td><td>0,76</td></tr>
+      <tr><td>Random Forest</td><td>0,82</td><td>0,74</td></tr>
+    </table>
+
+    <div class="callout callout-success">
+      <strong>Résultat final (ensemble de test)</strong> — Accuracy : <strong>84 %</strong> ·
+      Precision classe 1 : 81 % · Recall classe 1 : 75 % · F1-score : 78 %.
+      Le modèle final (Régression Logistique optimisée) a été sauvegardé et est déployable.
+    </div>
+
+    <h3 class="sub">📊 Visualisations</h3>
+    <div class="figures">
+      <figure>
+        <img src="learning_curve_LogisticRegression.png">
+        <figcaption>Courbe de learning curve du model de Logistique Regression</figcaption>
+      </figure>
+      
+    </div>
+
+    <h3 class="sub">🎓 Ce que ce projet m'a apporté</h3>
+    <ul class="checklist">
+      <li>Maîtrise du <strong>workflow ML complet</strong> : EDA → prétraitement → modélisation → optimisation → sauvegarde</li>
+      <li>Comparaison rigoureuse de plusieurs algorithmes (accuracy, precision, recall, F1-score)</li>
+      <li>Optimisation d'hyperparamètres avec validation croisée (GridSearchCV, 5 plis)</li>
+      <li>Vigilance contre le Data Leakage dès l'étape de prétraitement</li>
+      <li>Organisation professionnelle d'un projet : notebooks structurés, code modulaire, modèle versionné</li>
+    </ul>
+
+    <a href="https://github.com/Aliousow94/projet-titanic" class="btn btn-primary" target="_blank">💻 Voir le code sur GitHub</a>
+
+    <div class="prev-next">
+      <a href="projet-fashion.html"><span>← Précédent</span>Fashion-MNIST — Deep Learning</a>
+      <a href="projet-reussite.html"><span>Suivant →</span>Prédiction de la réussite scolaire</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>© 2026 Mamadou Aliou SOW — Portfolio Data Science & Machine Learning</footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projets — Mamadou Aliou SOW</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"></a>
+    <button class="burger" id="burger">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <h1>Mes projets</h1>
+  <p>Data Science · Machine Learning · Deep Learning · Développement Java · Cloud & DevOps</p>
+</header>
+
+<section>
+  <div class="section-inner">
+    <div class="projects">
+
+      <article class="project">
+        <span class="badge badge-dl">Deep Learning</span> <span class="project-year">2026</span>
+        <h3>Classification d'images — Fashion-MNIST</h3>
+        <p>Étude comparative de deux approches d'implémentation de réseaux de neurones pour la classification d'images de vêtements.</p>
+        <ul>
+          <li>Implémentation complète <strong>from scratch avec NumPy</strong> (propagation et rétropropagation manuelles)</li>
+          <li>Modèle TensorFlow/Keras (ReLU/Softmax, optimiseur Adam) pour la classification des 10 classes</li>
+          <li>Analyse comparative des deux approches : performance, convergence, coût</li>
+        </ul>
+        <div class="result">✔ Accuracy test : 88,23% (TensorFlow) · 89,0% (NumPy)</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">TensorFlow</span><span class="tag">Keras</span></div>
+        <a href="projet-fashion.html" class="project-link">📖 En savoir plus →</a>
+        <a href="https://github.com/Aliousow94/projet-fashion-mnist-neural-networks" class="project-link" target="_blank" style="margin-left:1.5rem;">💻 GitHub</a>
+      </article>
+
+      <article class="project">
+        <span class="badge badge-ml">Machine Learning</span> <span class="project-year">2026</span>
+        <h3>Analyse prédictive — Survie des passagers du Titanic</h3>
+        <p>Workflow complet de Data Science : de la donnée brute au modèle optimisé et sauvegardé.</p>
+        <ul>
+          <li>Nettoyage, traitement des valeurs manquantes et outliers (IQR)</li>
+          <li>Encodage One-Hot et standardisation (StandardScaler)</li>
+          <li>Entraînement de 5 modèles, optimisation par GridSearchCV (validation croisée 5 plis)</li>
+        </ul>
+        <div class="result">✔ Accuracy : 84% (Régression Logistique optimisée)</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">GridSearchCV</span></div>
+        <a href="projet-titanic.html" class="project-link">📖 En savoir plus →</a>
+        <a href="https://github.com/Aliousow94/projet-titanic" class="project-link" target="_blank" style="margin-left:1.5rem;">💻 GitHub</a>
+      </article>
+
+      <article class="project">
+        <span class="badge badge-ds">Data Science</span> <span class="project-year">2026</span>
+        <h3>Prédiction de la réussite scolaire</h3>
+        <p>Analyse des facteurs académiques, démographiques et comportementaux de 1 000 étudiants de l'UAM.</p>
+        <ul>
+          <li>Imputation de 29% de données manquantes, analyse graphique (Matplotlib, Seaborn)</li>
+          <li>Modélisation par Arbre de Décision</li>
+          <li><strong>Audit critique</strong> : identification d'un biais de Data Leakage et recommandations</li>
+        </ul>
+        <div class="result">✔ Compétence clé : esprit critique face à des métriques "parfaites"</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Seaborn</span><span class="tag">Scikit-learn</span></div>
+        <a href="projet-reussite.html" class="project-link">📖 En savoir plus →</a>
+        <a href="https://github.com/Aliousow94/projet_finale_programatio_data_science" class="project-link" target="_blank" style="margin-left:1.5rem;">💻 GitHub</a>
+      </article>
+
+      <article class="project">
+        <span class="badge badge-dev">Java</span> <span class="project-year">2026</span>
+        <h3>Plateforme de vote électronique</h3>
+        <p>Application de bureau sécurisée pour les scrutins internes de l'UAM (délégués, chefs de département).</p>
+        <ul>
+          <li>Java 17, architecture <strong>MVC</strong>, gestion Maven</li>
+          <li>Sécurité : hachage <strong>SHA-256</strong>, authentification par rôles, contraintes SQL anti double-vote</li>
+          <li>Dashboard admin (graphiques JavaFX), import CSV, génération PDF (iText)</li>
+        </ul>
+        <div class="tags"><span class="tag">Java 17</span><span class="tag">JavaFX</span><span class="tag">MySQL</span><span class="tag">Maven</span><span class="tag">MVC</span></div>
+        <a href="projet-vote.html" class="project-link">📖 En savoir plus →</a>
+        <a href="https://github.com/Aliousow94/java-evote-platform" class="project-link" target="_blank" style="margin-left:1.5rem;">💻 GitHub</a>
+      </article>
+
+      <article class="project">
+        <span class="badge badge-dev">DevOps / Cloud</span> <span class="project-year">2026</span>
+        <h3>Infrastructure serveur & conteneurisation</h3>
+        <p>Travaux pratiques d'administration Linux, virtualisation et Docker.</p>
+        <ul>
+          <li>Stockage Linux (parted, GPT, ext4, /etc/fstab avec UUID), réseau double isolé VirtualBox, sécurisation OpenSSH</li>
+          <li>Industrialisation de serveurs Nginx via Docker : Dockerfile, HEALTHCHECK, volumes, réseau bridge</li>
+          <li>Supervision : journalctl, docker stats</li>
+        </ul>
+        <div class="tags"><span class="tag">Linux</span><span class="tag">Ubuntu Server</span><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">VirtualBox</span></div>
+        <a href="projet-cloud.html" class="project-link">📖 En savoir plus →</a>
+        <a href="https://github.com/Aliousow94/cloud-virtualization-labs" class="project-link" target="_blank" style="margin-left:1.5rem;">💻 GitHub</a>
+      </article>
+
+      <article class="project">
+        <span class="badge badge-ds">Développement Web</span> <span class="project-year">2026</span>
+        <h3>Ce portfolio 🌐</h3>
+        <p>Site web développé en HTML5/CSS3, responsive, avec navigation multi-pages.</p>
+        <ul>
+          <li>Design moderne responsive (mobile, tablette, desktop)</li>
+          <li>Architecture multi-pages : accueil, à propos, projets, compétences, CV, contact</li>
+          <li>Hébergé sur GitHub Pages</li>
+        </ul>
+        <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">GitHub Pages</span></div>
+        <a href="https://github.com/Aliousow94/portfolio" class="project-link" target="_blank">💻 GitHub</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Mamadou Aliou SOW — Portfolio Data Science & Machine Learning</footer>
+<script src="script.js"></script>
+</body>
+</html>

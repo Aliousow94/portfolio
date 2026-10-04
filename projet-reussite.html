@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réussite scolaire — Data Science | Mamadou Aliou SOW</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"></a>
+    <button class="burger" id="burger">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <span class="badge badge-ds">Data Science · Analyse prédictive</span>
+  <h1>Prédiction de la réussite scolaire</h1>
+  <p>Analyse des facteurs académiques, démographiques et comportementaux — 1 000 étudiants de l'UAM</p>
+  <div class="tags" style="justify-content:center; margin-top:1.5rem;">
+    <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span>
+    <span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
+  </div>
+  <p class="context-note" style="margin-top:1.5rem;">Projet final — UE Programmation Data Science, L3 Informatique (UAM)<br>
+  Encadrants : Pr Amadou Dahirou GUEYE · Mrs Papa Assane DIOP</p>
+</header>
+
+<section>
+  <div class="section-inner">
+
+    <h2 class="section-title">Contexte & objectifs</h2>
+    <div class="about-text">
+      <p>
+        Concevoir un système capable d'identifier de manière <strong>précoce</strong> les profils
+        d'étudiants en situation de décrochage, afin de permettre à l'administration de l'UAM de
+        mettre en place des <strong>mesures d'aide ciblées</strong>.
+      </p>
+    </div>
+    <ul class="checklist">
+      <li>Nettoyage & préparation : imputation par la médiane de <strong>29 % de données manquantes</strong> (heures d'étude, notes de CC), suppression des doublons</li>
+      <li>Encodage des variables qualitatives : LabelEncoder, OneHotEncoder</li>
+      <li>Analyse exploratoire et visualisation (Matplotlib, Seaborn)</li>
+      <li>Modélisation : Arbre de Décision (DecisionTreeClassifier)</li>
+    </ul>
+
+    <h3 class="sub">📊 Faits saillants de l'analyse exploratoire</h3>
+    <table>
+      <tr><th>Observation</th><th>Conclusion</th></tr>
+      <tr><td>Moyenne générale : 14/20 (de 6,62 à 20/20)</td><td>Forte hétérogénéité des profils</td></tr>
+      <tr><td>Corrélation linéaire heures d'étude → moyenne</td><td>Le travail personnel est déterminant</td></tr>
+      <tr><td>Dégradation brutale avec l'absentéisme</td><td>Signal précoce exploitable</td></tr>
+      <tr><td>Résultats homogènes par filière et par sexe</td><td>Aucun "effet filière" ni effet genre</td></tr>
+    </table>
+
+    <h3 class="sub">⚠️ Conclusion critique : le piège du Data Leakage</h3>
+    <div class="callout">
+      <strong>Audit du modèle</strong> — L'Arbre de Décision affiche des métriques parfaites
+      (accuracy, précision et rappel à <strong>100 %</strong>). L'analyse critique a révélé pourquoi :
+      le modèle a conservé les variables de performance directe (moyenne, note_examen, note_cc).
+      Il n'a pas appris à <strong>anticiper</strong> — il s'est borné à redécouvrir la règle
+      arithmétique de l'université (Moyenne &lt; 10 = Échec). C'est un cas typique de
+      <strong>Data Leakage</strong>.
+    </div>
+    <div class="callout callout-success">
+      <strong>Recommandations proposées</strong> — 1) Retirer les variables liées aux notes finales.
+      2) Réentraîner le modèle uniquement sur les données comportementales précoces
+      (absences, heures d'étude, participation TD), pour un outil réellement utile dès le début du semestre.
+    </div>
+
+    <h3 class="sub">🎓 Ce que ce projet m'a apporté</h3>
+    <ul class="checklist">
+      <li>Gestion de données réelles fortement incomplètes (29 % de manquants)</li>
+      <li>Visualisation et communication analytique</li>
+      <li><strong>Esprit critique face à des résultats "trop parfaits"</strong> — un modèle à 100 % d'accuracy doit toujours être audité</li>
+      <li>Compréhension concrète du Data Leakage, un piège majeur en ML</li>
+    </ul>
+
+    <a href="https://github.com/Aliousow94/projet_finale_programatio_data_science" class="btn btn-primary" target="_blank">💻 Voir le code sur GitHub</a>
+
+    <div class="prev-next">
+      <a href="projet-titanic.html"><span>← Précédent</span>Analyse prédictive — Titanic</a>
+      <a href="projet-vote.html"><span>Suivant →</span>Plateforme de vote électronique</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>© 2026 Mamadou Aliou SOW — Portfolio Data Science & Machine Learning</footer>
+<script src="script.js"></script>
+</body>
+</html>

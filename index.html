@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mamadou Aliou SOW — Data Science & Machine Learning</title>
+<meta name="description" content="Étudiant en Licence 3 Informatique — Data Science, Machine Learning, Deep Learning. Portfolio.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"></a>
+    <button class="burger" id="burger">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">Portfolio — Data Science · Machine Learning</div>
+      <h1>Bonjour, je suis <span>Mamadou Aliou SOW</span></h1>
+      <p class="lead">
+        Étudiant en <strong>Licence 3 Informatique</strong> à l'Université Amadou Mahtar Mbow (UAM, Sénégal),
+        après deux années en <strong>Mathématiques, Physique et Informatique (MPI)</strong> qui m'ont donné
+        une base solide en mathématiques — un atout pour comprendre les algorithmes de Machine Learning.
+        Mon objectif : intégrer un <strong>Master en IA / Data Science</strong>.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>5</b><span>Projets réalisés</span></div>
+        <div class="stat"><b>84%</b><span>Accuracy — Titanic</span></div>
+        <div class="stat"><b>88%</b><span>Accuracy — Fashion-MNIST</span></div>
+        <div class="stat"><b>13,87/20</b><span>Moyenne Licence 2</span></div>
+      </div>
+      <a href="projets.html" class="btn btn-primary">Voir mes projets</a>
+      <a href="cv-mamadou-sow.pdf" class="btn btn-outline">Voir mon CV</a>
+    </div>
+    <div class="hero-photo">
+      <img src="profil.jpeg" alt="Photo de Mamadou Aliou SOW">
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="section-inner">
+    <h2 class="section-title">Mes domaines</h2>
+    <div class="grid-4">
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>Data Science</h3>
+        <p>Analyse, nettoyage, visualisation et préparation des données avec Pandas, NumPy, Matplotlib et Seaborn.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>Machine Learning</h3>
+        <p>Classification, régression, validation croisée et évaluation de modèles avec Scikit-learn.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧠</div>
+        <h3>Deep Learning</h3>
+        <p>Réseaux de neurones implémentés from scratch (NumPy) et avec TensorFlow/Keras.</p>
+      </div>
+      <div class="card">
+        <div class="icon">☁️</div>
+        <h3>Développement & Cloud</h3>
+        <p>Java, JavaFX, MySQL, Linux Ubuntu Server, Docker, OpenSSH et virtualisation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <h2 class="section-title">Projets en vedette</h2>
+    <div class="projects">
+      <article class="project">
+        <span class="badge badge-dl">Deep Learning</span>
+        <h3>Classification d'images — Fashion-MNIST</h3>
+        <p>Réseaux de neurones implémentés from scratch (NumPy) et avec TensorFlow/Keras, étude comparative.</p>
+        <div class="result">✔ Accuracy : 88%</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">TensorFlow</span><span class="tag">Keras</span></div>
+        <a href="projet-fashion.html" class="project-link">En savoir plus →</a>
+      </article>
+      <article class="project">
+        <span class="badge badge-ml">Machine Learning</span>
+        <h3>Analyse prédictive — Titanic</h3>
+        <p>Pipeline complet ML : nettoyage, encodage, 5 modèles entraînés, optimisation GridSearchCV.</p>
+        <div class="result">✔ Accuracy : 84%</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span></div>
+        <a href="projet-titanic.html" class="project-link">En savoir plus →</a>
+      </article>
+      <article class="project">
+        <span class="badge badge-ds">Data Science</span>
+        <h3>Prédiction de la réussite scolaire</h3>
+        <p>Analyse de données étudiantes, modélisation et audit critique (détection d'un biais de Data Leakage).</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Seaborn</span><span class="tag">Scikit-learn</span></div>
+        <a href="projet-reussite.html" class="project-link">En savoir plus →</a>
+      </article>
+    </div>
+    <a href="projets.html" class="btn btn-outline" style="margin-top:2rem;">Voir tous les projets →</a>
+  </div>
+</section>
+
+<footer>© 2026 Mamadou Aliou SOW — Portfolio Data Science & Machine Learning</footer>
+<script src="script.js"></script>
+</body>
+</html>
