@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optimisation de la production — Recherche opérationnelle | Mamadou Aliou SOW</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">&lt;MAS /&gt;</a>
+    <button class="burger" id="burger">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <span class="badge badge-ro">Recherche opérationnelle · Optimisation</span>
+  <h1>Optimisation de la production — SAHEL Ameublement</h1>
+  <p>Programmation linéaire : maximiser la marge bénéficiaire d'une coopérative sous contraintes de ressources</p>
+  <div class="tags" style="justify-content:center; margin-top:1.5rem;">
+    <span class="tag">Python</span><span class="tag">PuLP</span><span class="tag">SciPy</span>
+    <span class="tag">Excel Solver</span><span class="tag">Jupyter</span>
+  </div>
+  <p class="context-note" style="margin-top:1.5rem;">Projet d'équipe (3 étudiants) — Module Recherche opérationnelle, L3 Informatique (UAM)<br>
+  Enseignant responsable : Dr Cheikh GUEYE</p>
+</header>
+
+<section>
+  <div class="section-inner">
+
+    <h2 class="section-title">Contexte & objectifs</h2>
+    <div class="about-text">
+      <p>
+        Modéliser et résoudre un problème de <strong>programmation linéaire</strong> appliqué à la
+        planification de la production de la coopérative fictive <strong>SAHEL Ameublement</strong> (Dakar) :
+        déterminer les quantités optimales de <strong>tables, chaises et armoires</strong> à produire
+        chaque semaine pour <strong>maximiser la marge bénéficiaire</strong>, tout en respectant les
+        contraintes de ressources (bois, main-d'œuvre, temps machine) et les engagements commerciaux.
+      </p>
+    </div>
+    <ul class="checklist">
+      <li>Formaliser un problème de production sous forme de <strong>modèle mathématique</strong></li>
+      <li>Résoudre avec <strong>trois outils différents</strong> : Excel Solver, PuLP, SciPy</li>
+      <li><strong>Comparer et valider</strong> les résultats entre les approches</li>
+      <li>Interpréter grâce à l'<strong>analyse de sensibilité</strong> et aux <strong>prix duaux</strong></li>
+    </ul>
+
+    <h2 class="section-title">Modèle mathématique</h2>
+    <h3 class="sub">Variables de décision</h3>
+    <ul class="checklist">
+      <li>x<sub>1</sub> : nombre de tables produites</li>
+      <li>x<sub>2</sub> : nombre de chaises produites</li>
+      <li>x<sub>3</sub> : nombre d'armoires produites</li>
+    </ul>
+    <h3 class="sub">Fonction objectif</h3>
+    <div class="archi">max Z = 15 000·x<sub>1</sub> + 4 000·x<sub>2</sub> + 22 000·x<sub>3</sub> (FCFA)</div>
+    <h3 class="sub">Contraintes</h3>
+    <table>
+      <tr><th>Ressource</th><th>Contrainte</th><th>Disponibilité</th></tr>
+      <tr><td>Bois</td><td>8x<sub>1</sub> + 2x<sub>2</sub> + 12x<sub>3</sub></td><td>≤ 900</td></tr>
+      <tr><td>Main-d'œuvre</td><td>4x<sub>1</sub> + 1,5x<sub>2</sub> + 6x<sub>3</sub></td><td>≤ 400 h</td></tr>
+      <tr><td>Temps machine</td><td>2x<sub>1</sub> + x<sub>2</sub> + 3x<sub>3</sub></td><td>≤ 220 h</td></tr>
+      <tr><td>Limite commerciale</td><td>x<sub>2</sub></td><td>≤ 60</td></tr>
+      <tr><td>Contrat minimum</td><td>x<sub>3</sub></td><td>≥ 10</td></tr>
+      <tr><td>Non-négativité</td><td>x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub></td><td>≥ 0</td></tr>
+    </table>
+
+    <h2 class="section-title">Résultats obtenus</h2>
+    <p class="about-text">Les trois méthodes convergent vers la même solution optimale :</p>
+    <table>
+      <tr><th>Indicateur</th><th>Résultat</th></tr>
+      <tr><td>Tables à produire</td><td><strong style="color:var(--success)">85</strong></td></tr>
+      <tr><td>Chaises à produire</td><td>0</td></tr>
+      <tr><td>Armoires à produire</td><td><strong style="color:var(--success)">10</strong></td></tr>
+      <tr><td>Marge maximale hebdomadaire</td><td><strong style="color:var(--success)">1 495 000 FCFA</strong></td></tr>
+      <tr><td>Main-d'œuvre utilisée</td><td>400 h (ressource saturée)</td></tr>
+      <tr><td>Prix dual de la main-d'œuvre</td><td>3 750 FCFA/h</td></tr>
+    </table>
+    <div class="callout">
+      <strong>💡 Interprétation économique</strong> — La main-d'œuvre est la <strong>ressource limitante</strong>
+      du problème : chaque heure supplémentaire disponible rapporterait 3 750 FCFA (prix dual).
+      La production de chaises n'est pas rentable dans cette configuration. Le bois et le temps machine
+      restent partiellement disponibles (ressources non saturées).
+    </div>
+
+    <h2 class="section-title">Comparaison des méthodes</h2>
+    <table>
+      <tr><th>Outil</th><th>Atout principal</th></tr>
+      <tr><td>Excel Solver</td><td>Modélisation visuelle, interprétation des rapports (simplexe)</td></tr>
+      <tr><td>PuLP</td><td>Formulation lisible avec variables et contraintes nommées</td></tr>
+      <tr><td>SciPy</td><td>Approche matricielle adaptée à la résolution numérique (linprog)</td></tr>
+    </table>
+    <p class="about-text">
+      Les résultats <strong>identiques</strong> obtenus avec les trois approches valident la
+      cohérence de la solution — une démarche de vérification croisée essentielle en optimisation.
+    </p>
+
+    <h3 class="sub">🔄 Extensions étudiées</h3>
+    <ul class="checklist">
+      <li><strong>Programmation linéaire en nombres entiers</strong> (PLNE) : imposer des quantités entières de meubles</li>
+      <li><strong>Problème de transport</strong> : acheminement vers plusieurs villes avec coûts et capacités (données hypothétiques)</li>
+    </ul>
+
+    <h3 class="sub">🎓 Ce que ce projet m'a apporté</h3>
+    <ul class="checklist">
+      <li><strong>Application directe de mes bases mathématiques MPI</strong> (algèbre linéaire, optimisation) à un problème réel</li>
+      <li>Modélisation d'un problème économique sous forme mathématique</li>
+      <li>Maîtrise de deux bibliothèques d'optimisation Python (PuLP, SciPy)</li>
+      <li>Interprétation économique des prix duaux et analyse de sensibilité</li>
+      <li>Travail en équipe et validation croisée des résultats entre outils</li>
+    </ul>
+
+    <a href="https://github.com/Aliousow94/cooperative-production-optimization" class="btn btn-primary" target="_blank">💻 Voir le code sur GitHub</a>
+
+    <div class="prev-next">
+      <a href="projet-cloud.html"><span>← Précédent</span>Infrastructure & conteneurisation</a>
+      <a href="projets.html"><span>Retour →</span>Tous mes projets</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>© 2026 Mamadou Aliou SOW — Portfolio Data Science & Machine Learning</footer>
+<script src="script.js"></script>
+</body>
+</html>
